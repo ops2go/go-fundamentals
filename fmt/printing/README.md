@@ -5,10 +5,11 @@ Each of these groups has 3 functions — default formatting, user-defined fo
 
 ## Printing to STDOUT
 The most common use of formatting is to print to a terminal window through STDOUT. This can be done with the Print functions:
-
+```
 func Print(a ...interface{}) (n int, err error)
 func Printf(format string, a ...interface{}) (n int, err error)
 func Println(a ...interface{}) (n int, err error)
+```
 The Print() function simply prints a list of variables to STDOUT with default formatting. The Printf() function allows you to specify the formatting using a format template. The Println() function works like Print() except it inserts spaces between the variables and appends a new line at the end.
 
 I typically use Printf() when I need specific formatting options and Println() when I want default options. I almost always want a new line appended so I don’t personally use Print() much. One exception is if I am requesting interactive input from a user and I want the cursor immediately after what I print. For example, this line:
@@ -58,7 +59,7 @@ The “S” here stands for “String”. These functions take the same argument
 
 While these functions are convenient, they can be a bottleneck if you’re frequently generating strings. If you profile your application and find that you need to optimize it then reusing a bytes.Buffer with the Fprint() functions can be much faster.
 
-Error formatting
+## Error formatting
 One last formatting function that doesn’t quite fit into the other groups is Errorf():
 
 func Errorf(format string, a ...interface{}) error
