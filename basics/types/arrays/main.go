@@ -1,4 +1,4 @@
-package myarrays
+package arrays
 
 import (
 	"fmt"

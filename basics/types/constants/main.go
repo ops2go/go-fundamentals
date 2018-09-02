@@ -1,4 +1,4 @@
-package myconstants
+package main
 
 import (
 	"fmt"

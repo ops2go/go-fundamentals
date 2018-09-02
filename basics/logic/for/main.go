@@ -1,4 +1,4 @@
-package myfor
+package main
 
 import (
 	"fmt"
